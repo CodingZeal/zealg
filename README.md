@@ -6,23 +6,21 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'zealg'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install zealg
 
 ## Usage
 
-TODO: Write usage instructions here
+In a fresh rails project run:
+
+    $ zealg boilerplate
+
+This will do the following:
+- Clone the [zeal react-boilerplate](https://www.github.com/CodingZeal/react-boilerplate) into the `./tmp/` directory
+- Copy any files and folders from the boilerplate into the rails root directory
+- Add some methods to your `app/assets/application_helper.rb` file for asset linking
+- Add a layout template `app/views/layouts/client.rb`
+
+That's it!!!
 
 ## Development
 
