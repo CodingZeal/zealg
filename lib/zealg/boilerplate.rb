@@ -43,14 +43,8 @@ module Zealg
       puts "Cloning boilerplate"
       ::Git.clone('https://github.com/CodingZeal/react-boilerplate.git', 'boilerplate', path: "#{Dir.pwd}/tmp")
       move_boilerplate
-      write_to(
-        dest("app/helpers/application_helper.rb"),
-        after: "module ApplicationHelper",
-        text: APPLICATION_HELPER_METHODS
-      )
-      open(dest('app/views/layouts/client.html.erb'), 'w') do |f|
-        f.write(CLIENT_LAYOUT)
-      end
+      add_asset_helpers
+      add_client_layout
       puts "Installing node_modules..."
       %x(npm install)
       cleanup_tmp
@@ -75,6 +69,20 @@ module Zealg
     def cleanup_tmp
       puts "Cleaning up after myself"
       FileUtils.rm_r("#{Dir.pwd}/tmp/boilerplate")
+    end
+
+    def add_asset_helpers
+      write_to(
+        dest("app/helpers/application_helper.rb"),
+        after: "module ApplicationHelper",
+        text: APPLICATION_HELPER_METHODS
+      )
+    end
+
+    def add_client_layout
+      open(dest('app/views/layouts/client.html.erb'), 'w') do |f|
+        f.write(CLIENT_LAYOUT)
+      end
     end
 
     def move_boilerplate
