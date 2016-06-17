@@ -47,4 +47,4 @@ Authored by Julian Rogmans (@julianrogmans) of Coding ZEAL (http://codingzeal.co
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+Copyright (c) 2016 Zeal, LLC. Licensed under the [MIT License](http://opensource.org/licenses/MIT).
